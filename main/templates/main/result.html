@@ -1,0 +1,76 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<style>
+    .custom-container {
+        max-width: 85%;
+    }
+
+    /* .custom-table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+        
+    }
+
+    .custom-table tbody tr:hover {
+        background-color: #cce5ff;
+        
+    } */
+
+    .custom-table tbody td {
+        color: #cce5ff;
+
+    }
+
+    /* Custom styles for table headings */
+    .custom-table thead th {
+        text-align: left;
+        color: #cce5ff;
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 30px;
+        padding-left: 10px;
+    }
+
+    .table-responsive {
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+</style>
+
+<div class="container mt-5 custom-container" style="background-color: rgb(33, 37, 41);">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card" style="background-color: rgb(33, 37, 41);">
+                <div class="card-header text-center">
+                    <h3 style="color: #FFFFFF; font-weight: bold;">Enter Medicine Generic Name or Medicine Group
+                        Name</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="userInput" name="user_input"
+                                placeholder="Enter text here">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary" style="font-weight: bold;">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="card-body">
+                        {% if medicine_table %}
+                        <div class="table-responsive">
+                            {{ medicine_table|safe }}
+                        </div>
+                        {% else %}
+                        <p></p>
+                        {% endif %}
+                        {% if error %}
+                        <p><b>Inavlid Input. Please check the input entered.</b></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
