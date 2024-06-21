@@ -1,4 +1,140 @@
 {% extends 'main/base.html' %}
+{% load static %}
 {% block content %}
+<style>
+  .body {
+    color: white;
+    background-color: #0e0e0e;
+    height: 100vh !important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  img {
+    border-radius: 7.5px;
+  }
+
+  .centerImage {
+    width: 100%;
+    height: auto;
+    max-width: 650px;
+    position: relative;
+  }
+
+  .mainText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    max-width: 90%;
+    padding: 0 10px;
+  }
+
+  .image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .image-item {
+    position: relative;
+    height: 410px;
+    margin: 0 5px;
+  }
+
+  .image-item img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+  }
+
+  @media (max-width: 992px) {
+    .centerImage {
+      max-width: 60%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .centerImage {
+      max-width: 70%;
+    }
+
+    .mainText h5,
+    .mainText p {
+      font-size: 14px;
+    }
+
+    .mainText .btn {
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .centerImage {
+      max-width: 90%;
+    }
+
+    .mainText h5,
+    .mainText p {
+      font-size: 12px;
+    }
+
+    .mainText .btn {
+      font-size: 10px;
+      padding: 3px 8px;
+    }
+  }
+</style>
+
+<div class="d-flex h-100 text-center text-bg-dark body">
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <!-- SVG symbols here -->
+  </svg>
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div></div>
+    </header>
+    <div class="image-container">
+      <div class="image-item">
+        <img src="{% static 'main/1.png' %}" alt="Image 1">
+      </div>
+      <div class="image-item" style="position: relative;">
+        <img src="{% static 'main/2.webp' %}" alt="My image" class="centerImage" />
+        <main class="px-3 mainText">
+          <div class="container-fluid" style="width: 95%; min-height: 29.5px; border-radius: 5px; margin-bottom: 15px; background-color: #0e0e0e; overflow: hidden;">
+            <h5 style="font-weight: bold;">Enter Medicine Generic Name or Medicine Group Name</h5>
+          </div>
+          <p class="lead" style="margin-top: 10px;">"Affordable Alternatives: Same Relief, Lower Cost."</p>
+          <p class="lead">
+            <a href="{% url 'get_medicines' %}" class="btn btn-lg btn-light fw-bold border-white bg-white">Search</a>
+          </p>
+        </main>
+      </div>
+      <div class="image-item">
+        <img src="{% static 'main/3.jpg' %}" alt="Image 3">
+      </div>
+    </div>
+
+    <footer class="mt-auto text-white-50">
+      <p>
+        ©<a href="https://getbootstrap.com/" class="text-white">MedHeaven</a>, by
+        <a href="https://twitter.com/mdo" class="text-white">@adityataneja</a>.
+      </p>
+    </footer>
+  </div>
+  <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</div>
 
 {% endblock content %}
