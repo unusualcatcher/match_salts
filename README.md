@@ -41,7 +41,7 @@ While in the virtual environment, install Django and other dependencies using th
 
 Apply database migrations using this command after entering the directory containing the "manage.py" file (usually located in "match_salts-main/manage.py":
 
-`cd match_salts-main/manage.py`
+`cd match_salts-main`
 
 `python manage.py migrate`
 
