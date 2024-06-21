@@ -21,7 +21,7 @@ cd match_salts
 
 2. Create a virtual environment named `venvPath` (or any name you prefer):
 
-python3 -m venv venvPath
+`python3 -m venv venvPath`
 
 3. Activate the virtual environment. On Windows:
 
@@ -35,21 +35,22 @@ source venv/bin/activate
 
 While in the virtual environment, install Django and other dependencies using the following command:
 
-python -m pip install django pandas beautifulsoup4
+`python -m pip install django pandas beautifulsoup4`
 
 ## Database Setup 
 
 Apply database migrations using this command after entering the directory containing the "manage.py" file (usually located in "match_salts-main/manage.py":
 
-cd match_salts-main/manage.py
-python manage.py migrate
+`cd match_salts-main/manage.py`
+
+`python manage.py migrate`
 
 
 ## Running the Django Application
 
 Start the Django development server:
 
-python manage.py runserver
+`python manage.py runserver`
 
 By default, the server will run on `http://localhost:8000/`.
 
